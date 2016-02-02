@@ -31,4 +31,9 @@
     return [self amount] == [object amount];
 }
 
+- (NSUInteger)hash{
+    
+    return (NSUInteger) self.amount;
+}
+
 @end

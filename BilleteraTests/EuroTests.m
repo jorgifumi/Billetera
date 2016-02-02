@@ -43,4 +43,14 @@
     XCTAssertEqualObjects(ten, total, @"Equivalent objects should be equal!");
 }
 
+- (void)testHash{
+    
+    AGTEuro *a = [[AGTEuro alloc]initWithAmount:2];
+    AGTEuro *b = [[AGTEuro alloc]initWithAmount:2];
+    
+    XCTAssertEqual([a hash], [b hash], @"Equal objects must have hash");
+}
+
+
+
 @end
