@@ -8,18 +8,13 @@
 
 #import "AGTMoney.h"
 #import "NSObject+GNUStepAddons.h"
-
-@interface AGTMoney ()
-
-@property (nonatomic)NSInteger amount;
-
-@end
+#import "AGTMoney-Private.h"
 
 @implementation AGTMoney
 
 - (id)initWithAmount:(NSInteger)amount{
     if (self = [super init]) {
-        _amount = amount;
+        _amount = @(amount);
     }
     return self;
 }
@@ -32,9 +27,20 @@
 }
 
 #pragma mark - Overwritten
+
 - (NSString *)description{
     
     return [NSString stringWithFormat:@" <%@ %ld", [self class], (long)[self amount]];
+}
+
+- (BOOL)isEqual:(id)object{
+    
+    return [self amount] == [object amount];
+}
+
+- (NSUInteger)hash{
+    
+    return (NSUInteger) self.amount;
 }
 
 @end

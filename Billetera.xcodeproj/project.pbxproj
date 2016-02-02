@@ -59,6 +59,7 @@
 		6821AD8D1C611AF80091C65C /* NSObject+GNUStepAddons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GNUStepAddons.h"; sourceTree = "<group>"; };
 		6821AD8E1C611AF80091C65C /* NSObject+GNUStepAddons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GNUStepAddons.m"; sourceTree = "<group>"; };
 		6821AD911C611E890091C65C /* AGTMoneyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTMoneyTest.m; sourceTree = "<group>"; };
+		6821AD931C612A030091C65C /* AGTMoney-Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AGTMoney-Private.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +142,7 @@
 				6821AD851C6111A30091C65C /* AGTDollar.m */,
 				6821AD881C6118560091C65C /* AGTMoney.h */,
 				6821AD891C6118560091C65C /* AGTMoney.m */,
+				6821AD931C612A030091C65C /* AGTMoney-Private.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";

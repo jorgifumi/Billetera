@@ -41,4 +41,15 @@
     XCTAssertEqual([a hash], [b hash], @"Equal objects must have hash");
 }
 
+- (void)testAmountStorage{
+    
+    AGTDollar *dollar = [[AGTDollar alloc]initWithAmount:2];
+    
+#pragma clang diagnistic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    XCTAssertEqual(2, [[dollar performSelector:@selector(amount)]integerValue], @"The value retrieved should be the same as the stored");
+#pragma clang diagnostic pop
+    
+}
+
 @end

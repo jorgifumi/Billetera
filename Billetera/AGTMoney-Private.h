@@ -1,5 +1,5 @@
 //
-//  AGTDollar.h
+//  AGTMoney-Private.h
 //  Billetera
 //
 //  Created by Jorge Miguel Lucena Pino on 02/02/16.
@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "AGTMoney.h"
 
-
-@interface AGTDollar : AGTMoney
-
-- (AGTDollar *)times:(NSUInteger)multiplier;
-
+@interface AGTMoney ()
+@property (nonatomic, ) NSNumber* amount;
 @end
