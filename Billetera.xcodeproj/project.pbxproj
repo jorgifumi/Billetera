@@ -13,7 +13,9 @@
 		6821AD601C6001060091C65C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6821AD5E1C6001060091C65C /* Main.storyboard */; };
 		6821AD621C6001060091C65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6821AD611C6001060091C65C /* Assets.xcassets */; };
 		6821AD651C6001060091C65C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6821AD631C6001060091C65C /* LaunchScreen.storyboard */; };
-		6821AD701C6001060091C65C /* BilleteraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD6F1C6001060091C65C /* BilleteraTests.m */; };
+		6821AD7B1C6001E10091C65C /* EuroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD7A1C6001E10091C65C /* EuroTests.m */; };
+		6821AD7E1C60029F0091C65C /* AGTEuro.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD7D1C60029F0091C65C /* AGTEuro.m */; };
+		6821AD7F1C60029F0091C65C /* AGTEuro.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD7D1C60029F0091C65C /* AGTEuro.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,10 @@
 		6821AD641C6001060091C65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6821AD661C6001060091C65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6821AD6B1C6001060091C65C /* BilleteraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BilleteraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6821AD6F1C6001060091C65C /* BilleteraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BilleteraTests.m; sourceTree = "<group>"; };
 		6821AD711C6001060091C65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6821AD7A1C6001E10091C65C /* EuroTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EuroTests.m; sourceTree = "<group>"; };
+		6821AD7C1C60029F0091C65C /* AGTEuro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTEuro.h; sourceTree = "<group>"; };
+		6821AD7D1C60029F0091C65C /* AGTEuro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTEuro.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		6821AD541C6001060091C65C /* Billetera */ = {
 			isa = PBXGroup;
 			children = (
+				6821AD801C6002AA0091C65C /* Models */,
 				6821AD581C6001060091C65C /* AppDelegate.h */,
 				6821AD591C6001060091C65C /* AppDelegate.m */,
 				6821AD5B1C6001060091C65C /* ViewController.h */,
@@ -105,10 +110,27 @@
 		6821AD6E1C6001060091C65C /* BilleteraTests */ = {
 			isa = PBXGroup;
 			children = (
-				6821AD6F1C6001060091C65C /* BilleteraTests.m */,
+				6821AD811C6101BA0091C65C /* Models */,
 				6821AD711C6001060091C65C /* Info.plist */,
 			);
 			path = BilleteraTests;
+			sourceTree = "<group>";
+		};
+		6821AD801C6002AA0091C65C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6821AD7C1C60029F0091C65C /* AGTEuro.h */,
+				6821AD7D1C60029F0091C65C /* AGTEuro.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6821AD811C6101BA0091C65C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6821AD7A1C6001E10091C65C /* EuroTests.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +238,7 @@
 				6821AD5D1C6001060091C65C /* ViewController.m in Sources */,
 				6821AD5A1C6001060091C65C /* AppDelegate.m in Sources */,
 				6821AD571C6001060091C65C /* main.m in Sources */,
+				6821AD7E1C60029F0091C65C /* AGTEuro.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +246,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6821AD701C6001060091C65C /* BilleteraTests.m in Sources */,
+				6821AD7B1C6001E10091C65C /* EuroTests.m in Sources */,
+				6821AD7F1C60029F0091C65C /* AGTEuro.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +426,7 @@
 				6821AD761C6001060091C65C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6821AD771C6001060091C65C /* Build configuration list for PBXNativeTarget "BilleteraTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +435,7 @@
 				6821AD791C6001060091C65C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
