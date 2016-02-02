@@ -1,17 +1,18 @@
 //
-//  AGTEuro.m
+//  AGTDollar.m
 //  Billetera
 //
-//  Created by Jorge Miguel Lucena Pino on 01/02/16.
+//  Created by Jorge Miguel Lucena Pino on 02/02/16.
 //  Copyright © 2016 Jorge Miguel Lucena Pino. All rights reserved.
 //
 
-#import "AGTEuro.h"
+#import "AGTDollar.h"
 
-@interface AGTEuro()
+
+@interface AGTDollar()
 @property (nonatomic) NSUInteger amount;
 @end
-@implementation AGTEuro
+@implementation AGTDollar
 
 - (id)initWithAmount:(NSUInteger) amount{
     if (self = [super init]) {
@@ -20,8 +21,8 @@
     return self;
 }
 
-- (AGTEuro *)times:(NSUInteger)multiplier{
-    return [[AGTEuro alloc] initWithAmount:self.amount * multiplier];
+- (AGTDollar *)times:(NSUInteger)multiplier{
+    return [[AGTDollar alloc] initWithAmount:self.amount * multiplier];
 }
 
 #pragma mark - Overwritten
