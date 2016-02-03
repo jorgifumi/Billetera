@@ -11,11 +11,4 @@
 
 @implementation AGTDollar
 
-- (AGTDollar *)times:(NSUInteger)multiplier{
-    return [[AGTDollar alloc] initWithAmount:[self.amount integerValue] * multiplier];
-}
-
-#pragma mark - Overwritten
-
-
 @end

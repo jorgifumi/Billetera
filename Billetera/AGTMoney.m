@@ -31,11 +31,11 @@
     return self;
 }
 
-- (AGTMoney *)times:(NSInteger)multiplier{
+- (id)times:(NSInteger)multiplier{
     
-    // Shouldn't be called, use subclass method insthead
+    AGTMoney *newMoney = [[AGTMoney alloc] initWithAmount:[self.amount integerValue] * multiplier];
     
-    return [self subclassResponsibility:_cmd];
+    return  newMoney;
 }
 
 #pragma mark - Overwritten

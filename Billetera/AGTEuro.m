@@ -11,11 +11,4 @@
 
 @implementation AGTEuro
 
-- (AGTEuro *)times:(NSUInteger)multiplier{
-    return [[AGTEuro alloc] initWithAmount:[self.amount integerValue] * multiplier];
-}
-
-#pragma mark - Overwritten
-
-
 @end

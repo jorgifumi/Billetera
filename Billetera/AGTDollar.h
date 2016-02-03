@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "AGTMoney.h"
 
-
 @interface AGTDollar : AGTMoney
-
-- (AGTDollar *)times:(NSUInteger)multiplier;
 
 @end
