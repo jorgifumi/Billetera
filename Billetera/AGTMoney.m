@@ -8,32 +8,32 @@
 
 #import "AGTMoney.h"
 #import "NSObject+GNUStepAddons.h"
-#import "AGTMoney-Private.h"
-#import "AGTEuro.h"
-#import "AGTDollar.h"
+
 
 @implementation AGTMoney
 
 +(id)euroWithAmount:(NSInteger)amount{
 
-    return  [[AGTEuro alloc]initWithAmount:amount];
+    return  [[AGTMoney alloc]initWithAmount:amount currency:@"EUR"];
 }
 
 +(id)dollarWithAmount:(NSInteger)amount{
     
-    return [[AGTDollar alloc]initWithAmount:amount];
+    return [[AGTMoney alloc]initWithAmount:amount currency:@"USD"];
 }
 
-- (id)initWithAmount:(NSInteger)amount{
+- (id)initWithAmount:(NSInteger)amount currency:(NSString *)currency{
     if (self = [super init]) {
         _amount = @(amount);
+        _currency = currency;
     }
     return self;
 }
 
 - (id)times:(NSInteger)multiplier{
     
-    AGTMoney *newMoney = [[AGTMoney alloc] initWithAmount:[self.amount integerValue] * multiplier];
+    AGTMoney *newMoney = [[AGTMoney alloc] initWithAmount:[self.amount integerValue] * multiplier
+                                                 currency:self.currency];
     
     return  newMoney;
 }
