@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "AGTEuro.h"
+#import "AGTMoney.h"
 
 @interface EuroTests : XCTestCase
 
@@ -27,8 +28,8 @@
 
 - (void)testSimpleMultiplication{
  
-    AGTEuro *five = [[AGTEuro alloc]initWithAmount: 5];
-    AGTEuro *ten = [[AGTEuro alloc]initWithAmount:10];
+    AGTEuro *five = [AGTMoney euroWithAmount:5];
+    AGTEuro *ten = [AGTMoney euroWithAmount:10];
     AGTEuro *product = [five times:2];
     
     XCTAssertEqualObjects(product, ten, @"€5 * 2 should be €10");
@@ -36,8 +37,8 @@
 
 - (void)testEquality{
     
-    AGTEuro *five = [[AGTEuro alloc]initWithAmount:5];
-    AGTEuro *ten = [[AGTEuro alloc]initWithAmount:10];
+    AGTEuro *five = [AGTMoney euroWithAmount:5];
+    AGTEuro *ten = [AGTMoney euroWithAmount:10];
     AGTEuro *total = [five times:2];
     
     XCTAssertEqualObjects(ten, total, @"Equivalent objects should be equal!");
@@ -45,15 +46,15 @@
 
 - (void)testHash{
     
-    AGTEuro *a = [[AGTEuro alloc]initWithAmount:2];
-    AGTEuro *b = [[AGTEuro alloc]initWithAmount:2];
+    AGTEuro *a = [AGTMoney euroWithAmount:2];
+    AGTEuro *b = [AGTMoney euroWithAmount:2];
     
     XCTAssertEqual([a hash], [b hash], @"Equal objects must have hash");
 }
 
 - (void)testAmountStorage{
     
-    AGTEuro *euro = [[AGTEuro alloc]initWithAmount:2];
+    AGTEuro *euro = [AGTMoney euroWithAmount:2];
     
 #pragma clang diagnistic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"

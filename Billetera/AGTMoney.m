@@ -9,8 +9,20 @@
 #import "AGTMoney.h"
 #import "NSObject+GNUStepAddons.h"
 #import "AGTMoney-Private.h"
+#import "AGTEuro.h"
+#import "AGTDollar.h"
 
 @implementation AGTMoney
+
++(id)euroWithAmount:(NSInteger)amount{
+
+    return  [[AGTEuro alloc]initWithAmount:amount];
+}
+
++(id)dollarWithAmount:(NSInteger)amount{
+    
+    return [[AGTDollar alloc]initWithAmount:amount];
+}
 
 - (id)initWithAmount:(NSInteger)amount{
     if (self = [super init]) {
