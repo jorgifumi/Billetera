@@ -40,8 +40,16 @@
     
     XCTAssertEqualObjects(ten, total, @"Equivalent objects should be equal!");
     
-    XCTAssertEqualObjects([AGTMoney dollarWithAmount:10], total, @"Equivalent objects should be equal");
+    XCTAssertEqualObjects([AGTMoney dollarWithAmount:10], [[AGTMoney dollarWithAmount:5] times:2], @"Equivalent objects should be equal");
     XCTAssertFalse([total isEqual:five], @"Non equivalent objects should not be equal");
+}
+
+- (void)testDifferentCurrencies{
+    
+    AGTMoney *euro = [AGTMoney euroWithAmount:1];
+    AGTMoney *dollar = [AGTMoney dollarWithAmount:1];
+    
+    XCTAssertNotEqualObjects(euro, dollar, @"Different currencies should not be equal!");
 }
 
 - (void)testHash{
