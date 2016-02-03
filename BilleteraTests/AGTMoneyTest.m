@@ -32,6 +32,13 @@
     XCTAssertEqualObjects([AGTMoney dollarWithAmount:10], [[AGTMoney dollarWithAmount:5] times:2], @"$5 * 2 = $10");
 }
 
+- (void)testSimpleAddition{
+    
+    AGTMoney *sum = [[AGTMoney dollarWithAmount:5]plus:[AGTMoney dollarWithAmount:5]];
+    
+    XCTAssertEqualObjects(sum, [AGTMoney dollarWithAmount:10], @"$5 +$5 = $10");
+}
+
 - (void)testEquality{
     
     AGTMoney *five = [AGTMoney euroWithAmount:5];

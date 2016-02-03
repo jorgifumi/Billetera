@@ -19,5 +19,6 @@
             currency:(NSString *)currency;
 
 - (id)times:(NSInteger)multiplier;
+- (AGTMoney *)plus:(AGTMoney *)other;
 
 @end

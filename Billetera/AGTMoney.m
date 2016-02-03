@@ -38,6 +38,14 @@
     return  newMoney;
 }
 
+- (AGTMoney *)plus:(AGTMoney *)other{
+    
+    NSInteger totalAmount = [self.amount integerValue] + [other.amount integerValue];
+    
+    return [[AGTMoney alloc]initWithAmount:totalAmount
+                                  currency:self.currency];
+}
+
 #pragma mark - Overwritten
 
 - (NSString *)description{
