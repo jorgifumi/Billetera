@@ -7,18 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+@class AGTMoney;
+@class AGTBroker;
 
-@interface AGTMoney : NSObject
-@property (nonatomic, readonly) NSNumber* amount;
-@property (nonatomic, readonly) NSString *currency;
-
-+(id)euroWithAmount:(NSInteger)amount;
-+(id)dollarWithAmount:(NSInteger)amount;
+@protocol AGTMoney <NSObject>
 
 - (id)initWithAmount:(NSInteger)amount
             currency:(NSString *)currency;
 
-- (id)times:(NSInteger)multiplier;
-- (AGTMoney *)plus:(AGTMoney *)other;
+- (id<AGTMoney>)times:(NSInteger)multiplier;
+- (id<AGTMoney>)plus:(AGTMoney *)other;
+
+-(id<AGTMoney>)reduceToCurrency:(NSString *)currency withBroker:(AGTBroker *)broker;
+
+@end
+
+@interface AGTMoney : NSObject<AGTMoney>
+@property (nonatomic, readonly) NSString *currency;
+
++(id)euroWithAmount:(NSInteger)amount;
++(id)dollarWithAmount:(NSInteger)amount;
 
 @end

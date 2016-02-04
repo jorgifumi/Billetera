@@ -9,10 +9,6 @@
 #import "AGTBroker.h"
 #import "AGTMoney.h"
 
-@interface AGTBroker ()
-@property (nonatomic, strong) NSMutableDictionary *rates;
-@end
-
 @implementation AGTBroker
 
 - (id)init{
@@ -22,28 +18,14 @@
     return self;
 }
 
-- (AGTMoney *)reduce:(AGTMoney *)money
+- (AGTMoney *)reduce:(id<AGTMoney>)money
           toCurrency:(NSString *)currency{
     
-    AGTMoney *result;
-    double rate = [[self.rates objectForKey:[self keyFromCurrency:money.currency
-                                                          toCurrency:currency]]doubleValue];
-    // Check if source and destination currencies are the same
-    if ([money.currency isEqual:currency]) {
-        result = money;
-    }else if (rate == 0){
-        // NO conversion rate
-        [NSException raise:@"NoConversionRateException"
-                    format:@"Must have a conversion from %@ yo %@", money.currency, currency];
-    }else{
-        
-        NSInteger newAmount = [money.amount integerValue] * rate;
-        
-        result = [[AGTMoney alloc]initWithAmount:newAmount
-                                                    currency:currency];
-    }
+    // Double dispatch
+
+    return [money reduceToCurrency:currency
+                        withBroker:self];
     
-    return result;
 }
 
 - (void)addRate:(NSInteger)rate
