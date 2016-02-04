@@ -17,6 +17,9 @@
 		6821AD8B1C6118560091C65C /* AGTMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD891C6118560091C65C /* AGTMoney.m */; };
 		6821AD8F1C611AF80091C65C /* NSObject+GNUStepAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD8E1C611AF80091C65C /* NSObject+GNUStepAddons.m */; };
 		6821AD921C611E890091C65C /* AGTMoneyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD911C611E890091C65C /* AGTMoneyTest.m */; };
+		6821AD951C63B1820091C65C /* AGTBrokerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD941C63B1820091C65C /* AGTBrokerTest.m */; };
+		6821AD981C63B3090091C65C /* AGTBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD971C63B3080091C65C /* AGTBroker.m */; };
+		6821AD991C63B3090091C65C /* AGTBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD971C63B3080091C65C /* AGTBroker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		6821AD8D1C611AF80091C65C /* NSObject+GNUStepAddons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GNUStepAddons.h"; sourceTree = "<group>"; };
 		6821AD8E1C611AF80091C65C /* NSObject+GNUStepAddons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GNUStepAddons.m"; sourceTree = "<group>"; };
 		6821AD911C611E890091C65C /* AGTMoneyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTMoneyTest.m; sourceTree = "<group>"; };
+		6821AD941C63B1820091C65C /* AGTBrokerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTBrokerTest.m; sourceTree = "<group>"; };
+		6821AD961C63B3080091C65C /* AGTBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTBroker.h; sourceTree = "<group>"; };
+		6821AD971C63B3080091C65C /* AGTBroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTBroker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,8 @@
 			children = (
 				6821AD881C6118560091C65C /* AGTMoney.h */,
 				6821AD891C6118560091C65C /* AGTMoney.m */,
+				6821AD961C63B3080091C65C /* AGTBroker.h */,
+				6821AD971C63B3080091C65C /* AGTBroker.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				6821AD911C611E890091C65C /* AGTMoneyTest.m */,
+				6821AD941C63B1820091C65C /* AGTBrokerTest.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -253,6 +262,7 @@
 				6821AD5A1C6001060091C65C /* AppDelegate.m in Sources */,
 				6821AD8A1C6118560091C65C /* AGTMoney.m in Sources */,
 				6821AD571C6001060091C65C /* main.m in Sources */,
+				6821AD981C63B3090091C65C /* AGTBroker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +272,8 @@
 			files = (
 				6821AD8B1C6118560091C65C /* AGTMoney.m in Sources */,
 				6821AD921C611E890091C65C /* AGTMoneyTest.m in Sources */,
+				6821AD951C63B1820091C65C /* AGTBrokerTest.m in Sources */,
+				6821AD991C63B3090091C65C /* AGTBroker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
