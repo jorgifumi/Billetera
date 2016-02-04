@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface AGTMoney : NSObject
-@property (nonatomic, ) NSNumber* amount;
+@property (nonatomic, readonly) NSNumber* amount;
 @property (nonatomic, readonly) NSString *currency;
 
 +(id)euroWithAmount:(NSInteger)amount;
