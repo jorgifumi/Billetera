@@ -30,6 +30,9 @@
 		6821ADAA1C64ED610091C65C /* AGTControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADA91C64ED610091C65C /* AGTControllerTests.m */; };
 		6821ADAD1C64FBCB0091C65C /* AGTWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADAC1C64FBCB0091C65C /* AGTWalletTableViewController.m */; };
 		6821ADAE1C64FBCB0091C65C /* AGTWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADAC1C64FBCB0091C65C /* AGTWalletTableViewController.m */; };
+		6821ADB21C6505750091C65C /* AGTNSNotificationCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB11C6505750091C65C /* AGTNSNotificationCenterTests.m */; };
+		6821ADB51C6508270091C65C /* AGTFakeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB41C6508270091C65C /* AGTFakeNotificationCenter.m */; };
+		6821ADB61C6508270091C65C /* AGTFakeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB41C6508270091C65C /* AGTFakeNotificationCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		6821ADA91C64ED610091C65C /* AGTControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTControllerTests.m; sourceTree = "<group>"; };
 		6821ADAB1C64FBCB0091C65C /* AGTWalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWalletTableViewController.h; sourceTree = "<group>"; };
 		6821ADAC1C64FBCB0091C65C /* AGTWalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWalletTableViewController.m; sourceTree = "<group>"; };
+		6821ADB11C6505750091C65C /* AGTNSNotificationCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTNSNotificationCenterTests.m; sourceTree = "<group>"; };
+		6821ADB31C6508270091C65C /* AGTFakeNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTFakeNotificationCenter.h; sourceTree = "<group>"; };
+		6821ADB41C6508270091C65C /* AGTFakeNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTFakeNotificationCenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,7 @@
 		6821AD6E1C6001060091C65C /* BilleteraTests */ = {
 			isa = PBXGroup;
 			children = (
+				6821ADAF1C65054B0091C65C /* Singletons */,
 				6821ADA81C64ED220091C65C /* Controllers */,
 				6821AD811C6101BA0091C65C /* Models */,
 				6821AD711C6001060091C65C /* Info.plist */,
@@ -197,6 +204,16 @@
 				6821ADA91C64ED610091C65C /* AGTControllerTests.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6821ADAF1C65054B0091C65C /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				6821ADB11C6505750091C65C /* AGTNSNotificationCenterTests.m */,
+				6821ADB31C6508270091C65C /* AGTFakeNotificationCenter.h */,
+				6821ADB41C6508270091C65C /* AGTFakeNotificationCenter.m */,
+			);
+			name = Singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +323,7 @@
 				6821AD9E1C6401770091C65C /* AGTWallet.m in Sources */,
 				6821ADA41C64ED160091C65C /* AGTSimpleViewController.m in Sources */,
 				6821AD5D1C6001060091C65C /* ViewController.m in Sources */,
+				6821ADB51C6508270091C65C /* AGTFakeNotificationCenter.m in Sources */,
 				6821AD8F1C611AF80091C65C /* NSObject+GNUStepAddons.m in Sources */,
 				6821AD5A1C6001060091C65C /* AppDelegate.m in Sources */,
 				6821AD8A1C6118560091C65C /* AGTMoney.m in Sources */,
@@ -324,6 +342,8 @@
 				6821ADAA1C64ED610091C65C /* AGTControllerTests.m in Sources */,
 				6821AD921C611E890091C65C /* AGTMoneyTest.m in Sources */,
 				6821AD9F1C6401770091C65C /* AGTWallet.m in Sources */,
+				6821ADB21C6505750091C65C /* AGTNSNotificationCenterTests.m in Sources */,
+				6821ADB61C6508270091C65C /* AGTFakeNotificationCenter.m in Sources */,
 				6821AD951C63B1820091C65C /* AGTBrokerTest.m in Sources */,
 				6821AD991C63B3090091C65C /* AGTBroker.m in Sources */,
 				6821ADAE1C64FBCB0091C65C /* AGTWalletTableViewController.m in Sources */,

@@ -56,4 +56,17 @@
     return result;
 }
 
+#pragma mark - Notifications
+- (void)subscribeToMemoryWarning:(NSNotificationCenter *)nc{
+    
+    [nc addObserver:self
+           selector:@selector(dumpToDisk:)
+               name:UIApplicationDidReceiveMemoryWarningNotification
+             object:nil];
+}
+
+- (void)dumpToDisk:(NSNotification *)notification{
+    
+}
+
 @end
