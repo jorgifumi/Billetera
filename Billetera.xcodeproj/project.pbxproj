@@ -23,6 +23,13 @@
 		6821AD9B1C63FDF90091C65C /* AGTWalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD9A1C63FDF90091C65C /* AGTWalletTests.m */; };
 		6821AD9E1C6401770091C65C /* AGTWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD9D1C6401770091C65C /* AGTWallet.m */; };
 		6821AD9F1C6401770091C65C /* AGTWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821AD9D1C6401770091C65C /* AGTWallet.m */; };
+		6821ADA41C64ED160091C65C /* AGTSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADA21C64ED150091C65C /* AGTSimpleViewController.m */; };
+		6821ADA51C64ED160091C65C /* AGTSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADA21C64ED150091C65C /* AGTSimpleViewController.m */; };
+		6821ADA61C64ED160091C65C /* AGTSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6821ADA31C64ED150091C65C /* AGTSimpleViewController.xib */; };
+		6821ADA71C64ED160091C65C /* AGTSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6821ADA31C64ED150091C65C /* AGTSimpleViewController.xib */; };
+		6821ADAA1C64ED610091C65C /* AGTControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADA91C64ED610091C65C /* AGTControllerTests.m */; };
+		6821ADAD1C64FBCB0091C65C /* AGTWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADAC1C64FBCB0091C65C /* AGTWalletTableViewController.m */; };
+		6821ADAE1C64FBCB0091C65C /* AGTWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADAC1C64FBCB0091C65C /* AGTWalletTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,12 @@
 		6821AD9A1C63FDF90091C65C /* AGTWalletTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWalletTests.m; sourceTree = "<group>"; };
 		6821AD9C1C6401770091C65C /* AGTWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWallet.h; sourceTree = "<group>"; };
 		6821AD9D1C6401770091C65C /* AGTWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWallet.m; sourceTree = "<group>"; };
+		6821ADA11C64ED150091C65C /* AGTSimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTSimpleViewController.h; sourceTree = "<group>"; };
+		6821ADA21C64ED150091C65C /* AGTSimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTSimpleViewController.m; sourceTree = "<group>"; };
+		6821ADA31C64ED150091C65C /* AGTSimpleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTSimpleViewController.xib; sourceTree = "<group>"; };
+		6821ADA91C64ED610091C65C /* AGTControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTControllerTests.m; sourceTree = "<group>"; };
+		6821ADAB1C64FBCB0091C65C /* AGTWalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWalletTableViewController.h; sourceTree = "<group>"; };
+		6821ADAC1C64FBCB0091C65C /* AGTWalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWalletTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +113,7 @@
 		6821AD541C6001060091C65C /* Billetera */ = {
 			isa = PBXGroup;
 			children = (
+				6821ADA01C64ECE80091C65C /* Controllers */,
 				6821AD8C1C611AAE0091C65C /* Categories */,
 				6821AD801C6002AA0091C65C /* Models */,
 				6821AD581C6001060091C65C /* AppDelegate.h */,
@@ -126,6 +140,7 @@
 		6821AD6E1C6001060091C65C /* BilleteraTests */ = {
 			isa = PBXGroup;
 			children = (
+				6821ADA81C64ED220091C65C /* Controllers */,
 				6821AD811C6101BA0091C65C /* Models */,
 				6821AD711C6001060091C65C /* Info.plist */,
 			);
@@ -162,6 +177,26 @@
 				6821AD8E1C611AF80091C65C /* NSObject+GNUStepAddons.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		6821ADA01C64ECE80091C65C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6821ADA11C64ED150091C65C /* AGTSimpleViewController.h */,
+				6821ADA21C64ED150091C65C /* AGTSimpleViewController.m */,
+				6821ADA31C64ED150091C65C /* AGTSimpleViewController.xib */,
+				6821ADAB1C64FBCB0091C65C /* AGTWalletTableViewController.h */,
+				6821ADAC1C64FBCB0091C65C /* AGTWalletTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6821ADA81C64ED220091C65C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6821ADA91C64ED610091C65C /* AGTControllerTests.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6821AD651C6001060091C65C /* LaunchScreen.storyboard in Resources */,
+				6821ADA61C64ED160091C65C /* AGTSimpleViewController.xib in Resources */,
 				6821AD621C6001060091C65C /* Assets.xcassets in Resources */,
 				6821AD601C6001060091C65C /* Main.storyboard in Resources */,
 			);
@@ -256,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6821ADA71C64ED160091C65C /* AGTSimpleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,11 +304,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6821AD9E1C6401770091C65C /* AGTWallet.m in Sources */,
+				6821ADA41C64ED160091C65C /* AGTSimpleViewController.m in Sources */,
 				6821AD5D1C6001060091C65C /* ViewController.m in Sources */,
 				6821AD8F1C611AF80091C65C /* NSObject+GNUStepAddons.m in Sources */,
 				6821AD5A1C6001060091C65C /* AppDelegate.m in Sources */,
 				6821AD8A1C6118560091C65C /* AGTMoney.m in Sources */,
 				6821AD571C6001060091C65C /* main.m in Sources */,
+				6821ADAD1C64FBCB0091C65C /* AGTWalletTableViewController.m in Sources */,
 				6821AD981C63B3090091C65C /* AGTBroker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,10 +321,13 @@
 			files = (
 				6821AD8B1C6118560091C65C /* AGTMoney.m in Sources */,
 				6821AD9B1C63FDF90091C65C /* AGTWalletTests.m in Sources */,
+				6821ADAA1C64ED610091C65C /* AGTControllerTests.m in Sources */,
 				6821AD921C611E890091C65C /* AGTMoneyTest.m in Sources */,
 				6821AD9F1C6401770091C65C /* AGTWallet.m in Sources */,
 				6821AD951C63B1820091C65C /* AGTBrokerTest.m in Sources */,
 				6821AD991C63B3090091C65C /* AGTBroker.m in Sources */,
+				6821ADAE1C64FBCB0091C65C /* AGTWalletTableViewController.m in Sources */,
+				6821ADA51C64ED160091C65C /* AGTSimpleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
