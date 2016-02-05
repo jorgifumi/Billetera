@@ -33,6 +33,7 @@
 		6821ADB21C6505750091C65C /* AGTNSNotificationCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB11C6505750091C65C /* AGTNSNotificationCenterTests.m */; };
 		6821ADB51C6508270091C65C /* AGTFakeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB41C6508270091C65C /* AGTFakeNotificationCenter.m */; };
 		6821ADB61C6508270091C65C /* AGTFakeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB41C6508270091C65C /* AGTFakeNotificationCenter.m */; };
+		6821ADB81C65141C0091C65C /* AGTNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6821ADB71C65141C0091C65C /* AGTNetworkTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		6821ADB11C6505750091C65C /* AGTNSNotificationCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTNSNotificationCenterTests.m; sourceTree = "<group>"; };
 		6821ADB31C6508270091C65C /* AGTFakeNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTFakeNotificationCenter.h; sourceTree = "<group>"; };
 		6821ADB41C6508270091C65C /* AGTFakeNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTFakeNotificationCenter.m; sourceTree = "<group>"; };
+		6821ADB71C65141C0091C65C /* AGTNetworkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTNetworkTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				6821ADA81C64ED220091C65C /* Controllers */,
 				6821AD811C6101BA0091C65C /* Models */,
 				6821AD711C6001060091C65C /* Info.plist */,
+				6821ADB91C6514210091C65C /* Network */,
 			);
 			path = BilleteraTests;
 			sourceTree = "<group>";
@@ -214,6 +217,14 @@
 				6821ADB41C6508270091C65C /* AGTFakeNotificationCenter.m */,
 			);
 			name = Singletons;
+			sourceTree = "<group>";
+		};
+		6821ADB91C6514210091C65C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6821ADB71C65141C0091C65C /* AGTNetworkTests.m */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +357,7 @@
 				6821ADB61C6508270091C65C /* AGTFakeNotificationCenter.m in Sources */,
 				6821AD951C63B1820091C65C /* AGTBrokerTest.m in Sources */,
 				6821AD991C63B3090091C65C /* AGTBroker.m in Sources */,
+				6821ADB81C65141C0091C65C /* AGTNetworkTests.m in Sources */,
 				6821ADAE1C64FBCB0091C65C /* AGTWalletTableViewController.m in Sources */,
 				6821ADA51C64ED160091C65C /* AGTSimpleViewController.m in Sources */,
 			);
