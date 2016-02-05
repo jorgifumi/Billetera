@@ -62,6 +62,7 @@
 
 - (void)testThatNumberOfCellsIsNumberofMoneyPlusOne{
     
+    XCTAssertEqual(self.wallet.count + 1, [self.walletVC tableView:nil numberOfRowsInSection:0], @"Number of cells should be the number of moneys plus one");
 }
 
 @end
