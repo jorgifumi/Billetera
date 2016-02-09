@@ -20,7 +20,7 @@
 }
 
 - (NSUInteger)numberOfCurrencies {
-    NSMutableSet *currencies;
+    NSMutableSet *currencies = [NSMutableSet new];
     
     for (AGTMoney *each in self.moneys) {
         [currencies addObject:each.currency];

@@ -23,10 +23,11 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    AGTWallet *model = [[AGTWallet alloc]initWithAmount:1 currency:@"USD"];
+    AGTWallet *model = [[AGTWallet alloc]initWithAmount:10 currency:@"USD"];
     AGTWalletTableViewController *walletVC = [[AGTWalletTableViewController alloc] initWithModel:model];
     
-    self.window.rootViewController = walletVC;
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:walletVC];
+    self.window.rootViewController = navVC;
     [self.window makeKeyAndVisible];
     
     return YES;

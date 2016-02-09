@@ -8,6 +8,7 @@
 
 #import "AGTWalletTableViewController.h"
 #import "AGTWallet.h"
+#import "AGTBroker.h"
 
 static NSString *cellID = @"CellIdentifier";
 
@@ -26,7 +27,8 @@ static NSString *cellID = @"CellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"Billetera";
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -42,24 +44,43 @@ static NSString *cellID = @"CellIdentifier";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"%lu",(unsigned long)[self.model numberOfCurrencies]);
-    return [self.model numberOfCurrencies];
+    
+    return [self.model numberOfCurrencies] +1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [self.model count];// + 1;
-}
+    if (section < [self.model count]) {
+        return [self.model count] + 1;
+    }
 
+    return [self.model count];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     
     // Configure the cell...
-    
-    cell.textLabel.text = [self.model moneyForIndex:indexPath.row];
+    if (indexPath.row < [self.model count]) {
+        cell.textLabel.text = [self.model moneyForIndex:indexPath.row];
+    }else{
+        AGTBroker *broker = [AGTBroker new];
+        [broker addRate:2 fromCurrency:@"EUR" toCurrency:@"USD"];
+        
+        NSLog(@"Total %@", [[self.model reduceToCurrency:@"EUR" withBroker:broker] description]);
+        cell.textLabel.text = @"Total %@", [[self.model reduceToCurrency:@"EUR" withBroker:broker] description];
+    }
     
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if (section < [self.model count]) {
+        return @"USD";
+    }
+    
+    return @"Gran Total";
 }
 
 
