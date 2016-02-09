@@ -53,11 +53,13 @@
     XCTAssertEqualObjects(self.button.titleLabel.text, self.label.text, @"Button and label should have the same text");
 }
 
-- (void)testThatTableHasOneSection {
+- (void)testThatNumberOfSectionsIsNumberOfCurrenciesPlusOne {
     
     NSUInteger sections = [self.walletVC numberOfSectionsInTableView:nil];
     
-    XCTAssertEqual(sections, 1, @"There can only be one!");
+    NSUInteger currencies = self.wallet.numberOfCurrencies;
+    
+    XCTAssertEqual(sections, currencies + 1, @"Number of sections should be the number of currencies plus one");
 }
 
 - (void)testThatNumberOfCellsIsNumberofMoneyPlusOne{

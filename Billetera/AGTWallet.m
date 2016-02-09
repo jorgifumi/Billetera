@@ -18,7 +18,17 @@
 - (NSUInteger)count {
     return [self.moneys count];
 }
-- (id)initWithAmount:(NSInteger)amount currency:(NSString *)currency{
+
+- (NSUInteger)numberOfCurrencies {
+    NSMutableSet *currencies;
+    
+    for (AGTMoney *each in self.moneys) {
+        [currencies addObject:each.currency];
+    }
+    return currencies.count;
+}
+
+- (id)initWithAmount:(NSInteger)amount currency:(NSString *)currency {
     
     if (self = [super init]) {
         AGTMoney *money = [[AGTMoney alloc]initWithAmount:amount currency:currency];
