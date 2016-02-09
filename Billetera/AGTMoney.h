@@ -18,14 +18,14 @@
 - (id<AGTMoney>)times:(NSInteger)multiplier;
 - (id<AGTMoney>)plus:(AGTMoney *)other;
 
--(id<AGTMoney>)reduceToCurrency:(NSString *)currency withBroker:(AGTBroker *)broker;
+- (id<AGTMoney>)reduceToCurrency:(NSString *)currency withBroker:(AGTBroker *)broker;
 
 @end
 
 @interface AGTMoney : NSObject<AGTMoney>
 @property (nonatomic, readonly) NSString *currency;
 
-+(id)euroWithAmount:(NSInteger)amount;
-+(id)dollarWithAmount:(NSInteger)amount;
++ (id)euroWithAmount:(NSInteger)amount;
++ (id)dollarWithAmount:(NSInteger)amount;
 
 @end

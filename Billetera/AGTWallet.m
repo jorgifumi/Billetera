@@ -66,6 +66,12 @@
     return result;
 }
 
+- (NSString *)moneyForIndex:(NSInteger)index{
+    NSString *money = [self.moneys[index] description];
+    
+    return money;
+}
+
 #pragma mark - Notifications
 - (void)subscribeToMemoryWarning:(NSNotificationCenter *)nc{
     

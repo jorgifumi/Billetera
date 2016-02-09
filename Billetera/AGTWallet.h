@@ -13,5 +13,6 @@
 @property (nonatomic,readonly)NSUInteger count;
 @property (nonatomic,readonly)NSUInteger numberOfCurrencies;
 
+- (NSString *)moneyForIndex:(NSInteger)index;
 - (void)subscribeToMemoryWarning:(NSNotificationCenter *)nc;
 @end

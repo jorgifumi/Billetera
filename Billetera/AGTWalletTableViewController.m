@@ -9,6 +9,8 @@
 #import "AGTWalletTableViewController.h"
 #import "AGTWallet.h"
 
+static NSString *cellID = @"CellIdentifier";
+
 @interface AGTWalletTableViewController ()
 @property (nonatomic, strong)AGTWallet *model;
 @end
@@ -40,23 +42,26 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    NSLog(@"%lu",(unsigned long)[self.model numberOfCurrencies]);
+    return [self.model numberOfCurrencies];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [self.model count] + 1;
+    return [self.model count];// + 1;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     
     // Configure the cell...
     
+    cell.textLabel.text = [self.model moneyForIndex:indexPath.row];
+    
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

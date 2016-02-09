@@ -16,12 +16,12 @@
 
 @implementation AGTMoney
 
-+(id)euroWithAmount:(NSInteger)amount{
++ (id)euroWithAmount:(NSInteger)amount{
 
     return  [[AGTMoney alloc]initWithAmount:amount currency:@"EUR"];
 }
 
-+(id)dollarWithAmount:(NSInteger)amount{
++ (id)dollarWithAmount:(NSInteger)amount{
     
     return [[AGTMoney alloc]initWithAmount:amount currency:@"USD"];
 }

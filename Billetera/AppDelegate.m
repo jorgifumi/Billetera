@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "AGTWalletTableViewController.h"
+#import "AGTWallet.h"
+#import "AGTMoney.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +21,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    AGTWallet *model = [[AGTWallet alloc]initWithAmount:1 currency:@"USD"];
+    AGTWalletTableViewController *walletVC = [[AGTWalletTableViewController alloc] initWithModel:model];
+    
+    self.window.rootViewController = walletVC;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
