@@ -50,11 +50,11 @@ static NSString *cellID = @"CellIdentifier";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    if (section < [self.model count]) {
+    if (section < [self.model numberOfCurrencies]) {
         return [self.model count] + 1;
     }
 
-    return [self.model count];
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

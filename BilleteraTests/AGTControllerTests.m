@@ -67,4 +67,11 @@
     XCTAssertEqual(self.wallet.count + 1, [self.walletVC tableView:nil numberOfRowsInSection:0], @"Number of cells should be the number of moneys plus one");
 }
 
+- (void)testThatLastSectionHasOnlyOneCell {
+    NSUInteger sections = [self.walletVC numberOfSectionsInTableView:nil];
+    
+    XCTAssertEqual(1, [self.walletVC tableView:nil numberOfRowsInSection:sections], @"Number of cells in last section should be one");
+}
+
+
 @end
