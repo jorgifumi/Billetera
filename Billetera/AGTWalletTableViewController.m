@@ -45,12 +45,12 @@ static NSString *cellID = @"CellIdentifier";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return [self.model numberOfCurrencies] +1;
+    return [self.model.currencies count] +1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    if (section < [self.model numberOfCurrencies]) {
+    if (section < [self.model.currencies count]) {
         return [self.model count] + 1;
     }
 
@@ -77,7 +77,7 @@ static NSString *cellID = @"CellIdentifier";
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     if (section < [self.model count]) {
-        return @"USD";
+        return [self.model.currencies allObjects][section];
     }
     
     return @"Gran Total";

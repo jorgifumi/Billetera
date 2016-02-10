@@ -19,13 +19,13 @@
     return [self.moneys count];
 }
 
-- (NSUInteger)numberOfCurrencies {
+- (NSMutableSet *)currencies {
     NSMutableSet *currencies = [NSMutableSet new];
     
     for (AGTMoney *each in self.moneys) {
         [currencies addObject:each.currency];
     }
-    return currencies.count;
+    return currencies;
 }
 
 - (id)initWithAmount:(NSInteger)amount currency:(NSString *)currency {

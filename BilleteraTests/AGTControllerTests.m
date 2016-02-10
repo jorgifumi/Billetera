@@ -57,7 +57,7 @@
     
     NSUInteger sections = [self.walletVC numberOfSectionsInTableView:nil];
     
-    NSUInteger currencies = self.wallet.numberOfCurrencies;
+    NSUInteger currencies = [self.wallet.currencies count];
     
     XCTAssertEqual(sections, currencies + 1, @"Number of sections should be the number of currencies plus one");
 }
