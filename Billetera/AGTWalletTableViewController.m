@@ -52,7 +52,7 @@ static NSString *cellID = @"CellIdentifier";
     
     if (section < [self.model.currencies count]) {
         NSArray *array = [self.model moneysForCurrency:[self.model.currencies objectAtIndex:section]];
-        NSLog(@"%@",array);
+        
         return [array count] +1;
     }
 
@@ -71,17 +71,20 @@ static NSString *cellID = @"CellIdentifier";
         if (indexPath.row < [moneys count]) {
             
             cell.textLabel.text = [NSString stringWithFormat:@"%@", [moneys[indexPath.row] description]];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section, (long)indexPath.row];
+            //cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section, (long)indexPath.row];
         }else{
             // SubTotal
-            cell.textLabel.text = [NSString stringWithFormat:@"Subtotal %@", [[self.model subTotalForCurrency:currency] description]];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section, (long)indexPath.row];
+            [cell.textLabel setFont:[UIFont boldSystemFontOfSize:18]];
+            cell.textLabel.text = [[self.model subTotalForCurrency:currency] description];
+            cell.detailTextLabel.text = @"Subtotal";
         }
         
     }else{
         // Grand total
-        cell.textLabel.text = [NSString stringWithFormat:@"Total %@", [[self.model reduceToCurrency:@"EUR" withBroker:broker] description]];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section, (long)indexPath.row];
+        [cell.textLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        cell.backgroundColor = [UIColor greenColor];
+        cell.textLabel.text = [[self.model reduceToCurrency:@"EUR" withBroker:broker] description];
+        cell.detailTextLabel.text = @"Total";
     }
     
     return cell;

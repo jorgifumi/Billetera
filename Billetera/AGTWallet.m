@@ -37,10 +37,11 @@
 - (id<AGTMoney>)plus:(AGTMoney *)other{
     
     NSMutableArray *newMoneys = [self.moneys objectForKey:other.currency];
+    
     if (!newMoneys) {
         newMoneys = [NSMutableArray arrayWithObject:other];
     }else{
-        [newMoneys addObject:other];
+        newMoneys = [[newMoneys arrayByAddingObject:other] mutableCopy];
     }
     
     [self.moneys setObject:newMoneys forKey:other.currency];
@@ -51,17 +52,13 @@
     
     NSMutableDictionary *newMoneys = [[NSMutableDictionary alloc] init];
     
-    
     for (NSString *each in self.currencies) {
         for (AGTMoney *money in [self.moneys objectForKey:each]) {
             AGTMoney *newMoney = [money times:multiplier];
-            NSLog(@"%@",newMoney);
             [newMoneys setObject:@[newMoney] forKey:newMoney.currency];
         }
     }
-    NSLog(@"%@",newMoneys);
     self.moneys = newMoneys;
-    NSLog(@"%@",self.moneys);
     return self;
 }
 

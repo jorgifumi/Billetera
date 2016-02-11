@@ -79,7 +79,7 @@
 
 - (NSString *)description{
     
-    return [NSString stringWithFormat:@"<%@: %@ %@>", [self class], self.currency,self.amount];
+    return [NSString stringWithFormat:@"%@ %@", self.currency,self.amount];
 }
 
 - (BOOL)isEqual:(id)object{
