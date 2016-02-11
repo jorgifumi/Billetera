@@ -72,11 +72,13 @@
     return result;
 }
 
-- (NSString *)moneyForRow:(NSInteger)row atIndex:(NSInteger)index{
-    AGTMoney *money = [self.moneys objectForKey:[self.currencies objectAtIndex:index]][row];
+- (NSArray *)moneysForCurrency:(NSString *)currency{
     
-    return [money description];
+    NSArray *moneys = [self.moneys objectForKey:currency];
+  
+    return moneys;
 }
+
 
 #pragma mark - Notifications
 - (void)subscribeToMemoryWarning:(NSNotificationCenter *)nc{

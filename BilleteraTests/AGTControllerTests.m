@@ -62,9 +62,12 @@
     XCTAssertEqual(sections, currencies + 1, @"Number of sections should be the number of currencies plus one");
 }
 
-- (void)testThatNumberOfCellsIsNumberofMoneyPlusOne{
+- (void)testThatNumberOfCellsIsNumberOfMoneyOfThisCurrencyPlusOne{
     
-    XCTAssertEqual(self.wallet.count + 1, [self.walletVC tableView:nil numberOfRowsInSection:0], @"Number of cells should be the number of moneys plus one");
+    NSString *currency = [self.wallet.currencies objectAtIndex:0];
+    NSArray *moneys = [self.wallet moneysForCurrency: currency];
+    
+    XCTAssertEqual([moneys count] + 1, [self.walletVC tableView:nil numberOfRowsInSection:0], @"Number of cells should be the number of moneys plus one");
 }
 
 - (void)testThatLastSectionHasOnlyOneCell {

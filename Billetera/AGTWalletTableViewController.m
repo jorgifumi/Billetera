@@ -49,9 +49,10 @@ static NSString *cellID = @"CellIdentifier";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     if (section < [self.model.currencies count]) {
-        return [self.model count] + 1;
+        NSArray *array = [self.model moneysForCurrency:[self.model.currencies objectAtIndex:section]];
+        return [array count] +1;
     }
 
     return 1;
@@ -65,18 +66,22 @@ static NSString *cellID = @"CellIdentifier";
     // Configure the cell...
     if (indexPath.section < [self.model.currencies count]) {
         NSString *currency = [self.model.currencies objectAtIndex:indexPath.section];
+        NSArray *moneys = [self.model moneysForCurrency:currency];
         
-        if (indexPath.row < [self.model count]) {
-            cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.model moneyForRow:indexPath.row atIndex:indexPath.section]];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.section];
+        if (indexPath.row < [moneys count]) {
+            
+            cell.textLabel.text = [NSString stringWithFormat:@"%@", [moneys[indexPath.row] description]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section, (long)indexPath.row];
         }else{
+            // SubTotal
             cell.textLabel.text = [NSString stringWithFormat:@"Subtotal %@", [[self.model reduceToCurrency:currency withBroker:broker] description]];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.section];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section, (long)indexPath.row];
         }
         
     }else{
+        // Grand total
         cell.textLabel.text = [NSString stringWithFormat:@"Total %@", [[self.model reduceToCurrency:@"EUR" withBroker:broker] description]];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.section];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section, (long)indexPath.row];
     }
     
     return cell;

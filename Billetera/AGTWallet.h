@@ -13,6 +13,6 @@
 @property (nonatomic,readonly)NSUInteger count;
 @property (nonatomic,strong)NSArray *currencies;
 
-- (NSString *)moneyForRow:(NSInteger)row atIndex:(NSInteger)index;
+- (NSArray *)moneysForCurrency:(NSString *)currency;
 - (void)subscribeToMemoryWarning:(NSNotificationCenter *)nc;
 @end
