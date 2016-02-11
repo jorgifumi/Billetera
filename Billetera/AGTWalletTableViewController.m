@@ -59,16 +59,24 @@ static NSString *cellID = @"CellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+    AGTBroker *broker = [AGTBroker new];
+    [broker addRate:2 fromCurrency:@"EUR" toCurrency:@"USD"];
     
     // Configure the cell...
-    if (indexPath.row < [self.model count]) {
-        cell.textLabel.text = [self.model moneyForIndex:indexPath.row];
-    }else{
-        AGTBroker *broker = [AGTBroker new];
-        [broker addRate:2 fromCurrency:@"EUR" toCurrency:@"USD"];
+    if (indexPath.section < [self.model.currencies count]) {
+        NSString *currency = [self.model.currencies objectAtIndex:indexPath.section];
         
-        NSLog(@"Total %@", [[self.model reduceToCurrency:@"EUR" withBroker:broker] description]);
-        cell.textLabel.text = @"Total %@", [[self.model reduceToCurrency:@"EUR" withBroker:broker] description];
+        if (indexPath.row < [self.model count]) {
+            cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.model moneyForRow:indexPath.row atIndex:indexPath.section]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.section];
+        }else{
+            cell.textLabel.text = [NSString stringWithFormat:@"Subtotal %@", [[self.model reduceToCurrency:currency withBroker:broker] description]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.section];
+        }
+        
+    }else{
+        cell.textLabel.text = [NSString stringWithFormat:@"Total %@", [[self.model reduceToCurrency:@"EUR" withBroker:broker] description]];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.section];
     }
     
     return cell;
@@ -77,7 +85,7 @@ static NSString *cellID = @"CellIdentifier";
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     if (section < [self.model count]) {
-        return [self.model.currencies allObjects][section];
+        return [self.model.currencies objectAtIndex:section];
     }
     
     return @"Gran Total";

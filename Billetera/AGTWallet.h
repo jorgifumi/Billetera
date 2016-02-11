@@ -11,8 +11,8 @@
 
 @interface AGTWallet : NSObject<AGTMoney>
 @property (nonatomic,readonly)NSUInteger count;
-@property (nonatomic,strong)NSMutableSet *currencies;
+@property (nonatomic,strong)NSArray *currencies;
 
-- (NSString *)moneyForIndex:(NSInteger)index;
+- (NSString *)moneyForRow:(NSInteger)row atIndex:(NSInteger)index;
 - (void)subscribeToMemoryWarning:(NSNotificationCenter *)nc;
 @end

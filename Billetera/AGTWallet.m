@@ -11,7 +11,7 @@
 #import "AGTBroker.h"
 
 @interface AGTWallet ()
-@property (nonatomic, strong)NSMutableArray *moneys;
+@property (nonatomic, strong)NSMutableDictionary *moneys;
 @end
 
 @implementation AGTWallet
@@ -19,39 +19,42 @@
     return [self.moneys count];
 }
 
-- (NSMutableSet *)currencies {
-    NSMutableSet *currencies = [NSMutableSet new];
-    
-    for (AGTMoney *each in self.moneys) {
-        [currencies addObject:each.currency];
-    }
-    return currencies;
+- (NSArray *)currencies {
+
+    return [self.moneys allKeys];
 }
 
 - (id)initWithAmount:(NSInteger)amount currency:(NSString *)currency {
     
     if (self = [super init]) {
         AGTMoney *money = [[AGTMoney alloc]initWithAmount:amount currency:currency];
-        _moneys = [NSMutableArray array];
-        [_moneys addObject:money];
+        _moneys = [[NSMutableDictionary alloc] initWithCapacity:1];
+        [_moneys setObject:@[money] forKey:money.currency];
     }
     return self;
 }
 
 - (id<AGTMoney>)plus:(AGTMoney *)other{
     
-    [self.moneys addObject:other];
+    NSMutableArray *newMoneys = [self.moneys objectForKey:other.currency];
+    if (!newMoneys) {
+        newMoneys = [NSMutableArray arrayWithObject:other];
+    }else{
+        [newMoneys addObject:other];
+    }
+    
+    [self.moneys setObject:newMoneys forKey:other.currency];
     return self;
 }
 
 - (id<AGTMoney>)times:(NSInteger)multiplier{
     
-    NSMutableArray *newMoneys = [NSMutableArray arrayWithCapacity:self.moneys.count];
-    for (AGTMoney *each in self.moneys) {
-        AGTMoney *newMoney = [each times:multiplier];
-        [newMoneys addObject:newMoney];
-    }
-    self.moneys = newMoneys;
+//    NSMutableArray *newMoneys = [NSMutableArray arrayWithCapacity:self.moneys.count];
+//    for (AGTMoney *each in self.moneys) {
+//        AGTMoney *newMoney = [each times:multiplier];
+//        [newMoneys addObject:newMoney];
+//    }
+//    self.moneys = newMoneys;
     return self;
 }
 
@@ -59,17 +62,20 @@
                       withBroker:(AGTBroker *)broker{
     
     AGTMoney *result =  [[AGTMoney alloc]initWithAmount:0 currency:currency];
-    for (AGTMoney *each in self.moneys) {
-        result = [result plus:[each reduceToCurrency:currency withBroker:broker]];
+   
+    for (NSString *each in self.currencies) {
+        for (AGTMoney *money in [self.moneys objectForKey:each]) {
+            result = [result plus:[money reduceToCurrency:currency withBroker:broker]];
+        }
     }
     
     return result;
 }
 
-- (NSString *)moneyForIndex:(NSInteger)index{
-    NSString *money = [self.moneys[index] description];
+- (NSString *)moneyForRow:(NSInteger)row atIndex:(NSInteger)index{
+    AGTMoney *money = [self.moneys objectForKey:[self.currencies objectAtIndex:index]][row];
     
-    return money;
+    return [money description];
 }
 
 #pragma mark - Notifications
