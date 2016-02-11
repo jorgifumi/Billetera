@@ -27,10 +27,15 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
+//- (void)testSimpleMultiplication{
+//    
+//    AGTWallet *five = [[AGTWallet alloc] initWithAmount:5 currency:@"EUR"];
+//    AGTWallet *ten = [[AGTWallet alloc] initWithAmount:10 currency:@"EUR"];
+//    AGTWallet *product = [five times:2];
+//    
+//    XCTAssertEqualObjects([product moneysForCurrency:@"EUR"], [ten moneysForCurrency:@"EUR"], @"€5 * 2 should be €10");
+//}
+
 
 
 - (void)testAdditionWithReduction{

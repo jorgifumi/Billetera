@@ -52,6 +52,7 @@ static NSString *cellID = @"CellIdentifier";
     
     if (section < [self.model.currencies count]) {
         NSArray *array = [self.model moneysForCurrency:[self.model.currencies objectAtIndex:section]];
+        NSLog(@"%@",array);
         return [array count] +1;
     }
 
@@ -67,14 +68,13 @@ static NSString *cellID = @"CellIdentifier";
     if (indexPath.section < [self.model.currencies count]) {
         NSString *currency = [self.model.currencies objectAtIndex:indexPath.section];
         NSArray *moneys = [self.model moneysForCurrency:currency];
-        
         if (indexPath.row < [moneys count]) {
             
             cell.textLabel.text = [NSString stringWithFormat:@"%@", [moneys[indexPath.row] description]];
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section, (long)indexPath.row];
         }else{
             // SubTotal
-            cell.textLabel.text = [NSString stringWithFormat:@"Subtotal %@", [[self.model reduceToCurrency:currency withBroker:broker] description]];
+            cell.textLabel.text = [NSString stringWithFormat:@"Subtotal %@", [[self.model subTotalForCurrency:currency] description]];
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld %ld",(long)indexPath.section, (long)indexPath.row];
         }
         

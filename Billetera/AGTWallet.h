@@ -14,5 +14,6 @@
 @property (nonatomic,strong)NSArray *currencies;
 
 - (NSArray *)moneysForCurrency:(NSString *)currency;
+- (id<AGTMoney>)subTotalForCurrency:(NSString *)currency;
 - (void)subscribeToMemoryWarning:(NSNotificationCenter *)nc;
 @end

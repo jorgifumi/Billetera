@@ -24,7 +24,7 @@
 - (void)testSimpleMultiplication{
     
     AGTMoney *five = [AGTMoney euroWithAmount:5];
-    AGTMoney *ten = [AGTMoney euroWithAmount:10];
+    AGTMoney *ten = [[AGTMoney alloc] initWithAmount:10 currency:@"EUR"];
     AGTMoney *product = [five times:2];
     
     XCTAssertEqualObjects(product, ten, @"€5 * 2 should be €10");

@@ -49,12 +49,19 @@
 
 - (id<AGTMoney>)times:(NSInteger)multiplier{
     
-//    NSMutableArray *newMoneys = [NSMutableArray arrayWithCapacity:self.moneys.count];
-//    for (AGTMoney *each in self.moneys) {
-//        AGTMoney *newMoney = [each times:multiplier];
-//        [newMoneys addObject:newMoney];
-//    }
-//    self.moneys = newMoneys;
+    NSMutableDictionary *newMoneys = [[NSMutableDictionary alloc] init];
+    
+    
+    for (NSString *each in self.currencies) {
+        for (AGTMoney *money in [self.moneys objectForKey:each]) {
+            AGTMoney *newMoney = [money times:multiplier];
+            NSLog(@"%@",newMoney);
+            [newMoneys setObject:@[newMoney] forKey:newMoney.currency];
+        }
+    }
+    NSLog(@"%@",newMoneys);
+    self.moneys = newMoneys;
+    NSLog(@"%@",self.moneys);
     return self;
 }
 
@@ -77,6 +84,19 @@
     NSArray *moneys = [self.moneys objectForKey:currency];
   
     return moneys;
+}
+
+- (id<AGTMoney>)subTotalForCurrency:(NSString *)currency {
+    
+    AGTMoney *result =  [[AGTMoney alloc]initWithAmount:0 currency:currency];
+    
+    NSArray *moneys = [self.moneys objectForKey:currency];
+
+    for (AGTMoney *money in moneys) {
+        result = [result plus:money];
+    }
+    
+    return result;
 }
 
 

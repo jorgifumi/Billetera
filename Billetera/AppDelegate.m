@@ -25,6 +25,8 @@
     
     AGTWallet *model = [[AGTWallet alloc]initWithAmount:10 currency:@"USD"];
     [model plus:[[AGTMoney alloc] initWithAmount:20 currency:@"EUR"]];
+    //[model plus:[AGTMoney dollarWithAmount:30]];
+    //[model times:2];
     AGTWalletTableViewController *walletVC = [[AGTWalletTableViewController alloc] initWithModel:model];
     
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:walletVC];
